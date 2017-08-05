@@ -1,0 +1,16 @@
+---
+title: "Developing Data Products : Leaflet"
+author: "Nanda kumar Sathiyamoorthy"
+date: "August 5, 2017"
+output: html_document
+---
+
+```{r echo = FALSE}
+library(leaflet)
+myIcon <- makeIcon(iconUrl = "smiley.png", iconAnchorX = 60, iconAnchorY = 0)
+df <- data.frame(lat = 19.073799, lng = 72.883113)
+df %>%
+        leaflet() %>%
+        addTiles() %>%
+        addMarkers(icon = myIcon, popup = "My City !!")
+```
